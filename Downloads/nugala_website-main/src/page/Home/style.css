@@ -1,0 +1,71 @@
+.scrool-down-img {
+  filter: brightness(0) saturate(100%);
+}
+
+.world-container {
+  background-size: cover;
+
+  background-position: initial;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .world-container {
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .ai-img {
+    display: none;
+  }
+}
+
+/* Custom CSS to hide on medium screens */
+@media (min-width: 768px) {
+  .one-year-exp {
+    display: none;
+  }
+}
+
+
+
+.award-main {
+  display: flex;
+}
+
+.award-card {
+  display: flex;
+}
+
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (min-width: 640px) {
+
+  /* Small screens */
+  h1 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* Medium screens */
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* Large screens */
+  h1 {
+    font-size: 36px;
+  }
+}

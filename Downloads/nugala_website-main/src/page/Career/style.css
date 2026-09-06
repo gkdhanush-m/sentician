@@ -1,0 +1,11 @@
+.carrer-main-container {
+    padding-top: 15px;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    /* Change 'auto' to 'cover' */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents tiling if the image is smaller */
+}

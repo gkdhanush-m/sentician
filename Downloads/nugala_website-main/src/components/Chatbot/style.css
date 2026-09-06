@@ -1,0 +1,64 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chatbot-button {
+    background-color: white;
+    /* Set the background to white */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for better visibility */
+    border: 2px solid #239FE3;
+    /* Optional border for a nice touch */
+}
+
+.chatbot-button svg {
+    color: #239FE3;
+    width: 30px;
+    height: 30px;
+}
+
+
+.chatbot-box {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    min-width: 300px;
+    min-height: 80vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+@media screen and (min-width: 450px) {
+    .chatbot-box {
+        min-width: 450px;
+    }
+}
+
+
+
+
+.heading-container img {
+    width: 30px;
+    /* Adjust logo size */
+    height: 30px;
+    margin-right: 10px;
+    /* Add space between logo and heading */
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
