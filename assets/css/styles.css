@@ -1,0 +1,7746 @@
+/* ==========================================================================
+   Sentician Brand Design System — Exact Cosmos Theme
+   - Background: Pure Pitch Black #000000 (NOT Navy Blue)
+   - Cards & Surfaces: Smoked Obsidian Glass #0A0B0E / rgba(16, 18, 24, 0.76)
+   - Accents: Electric Cyan/Blue #0084FF + Solar Amber #FF7A00 + Violet #8B5CF6
+   - Hero: Exact Cosmos Aurora Horizon (assets/images/hero-cosmos-exact.webp)
+   ========================================================================== */
+
+:root {
+    --bg-base: #000000;
+    --bg-surface: #07080B;
+    --bg-surface-elevated: #0C0D12;
+    --bg-card: rgba(14, 16, 22, 0.78);
+    --bg-card-solid: #0A0B0F;
+
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.14);
+    --border-hover: rgba(255, 255, 255, 0.24);
+    --border-glow: rgba(0, 132, 255, 0.55);
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #9BA3B5;
+    --text-muted: #646E82;
+
+    --cyan-blue: #0084FF;
+    --cobalt: #0062FF;
+    --amber: #FF8A00;
+    --violet: #8B5CF6;
+    --magenta: #EC4899;
+
+    --brand-gradient: linear-gradient(90deg, #FF8A00 0%, #FFFFFF 48%, #0084FF 100%);
+
+    --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    --shadow-card: 0 24px 60px -20px rgba(0, 0, 0, 0.9);
+    --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-base);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-base);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 12px;
+    z-index: 999;
+    background: var(--cyan-blue);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+    left: 12px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.gradient-text {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.mono-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.eyebrow-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan-blue);
+    box-shadow: 0 0 8px var(--cyan-blue);
+}
+
+/* Wordmark Sizes */
+.sentician-logo--sm { width: 148px; height: auto; }
+.sentician-logo--md { width: 220px; height: auto; }
+.sentician-logo--lg { width: 320px; max-width: 100%; height: auto; }
+
+/* ==================== EXACT GLOWING PILL BUTTON (Screenshot Exact) ==================== */
+.btn-glow-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #000000;
+    border: 1px solid rgba(0, 132, 255, 0.65);
+    box-shadow: 0 0 20px -2px rgba(0, 132, 255, 0.72), inset 0 0 10px rgba(0, 132, 255, 0.25);
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-glow-pill:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 132, 255, 0.95);
+    box-shadow: 0 0 28px rgba(0, 132, 255, 0.92), inset 0 0 14px rgba(0, 132, 255, 0.42);
+}
+
+.btn-glow-pill--hero {
+    padding: 13px 34px;
+    font-size: 0.98rem;
+    box-shadow: 0 0 26px -2px rgba(0, 132, 255, 0.8), inset 0 0 12px rgba(0, 132, 255, 0.3);
+}
+
+.btn-glow-pill--sm {
+    padding: 9px 22px;
+    font-size: 0.86rem;
+}
+
+.btn-glow-pill--wide {
+    width: 100%;
+    padding: 12px 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.btn-primary {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: #E2E8F0;
+    transform: translateY(-1px);
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+}
+
+.btn-ghost:hover {
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn:focus-visible,
+.btn-glow-pill:focus-visible,
+.nav-link:focus-visible,
+.filter-pill:focus-visible,
+.faq-trigger:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--cyan-blue);
+    outline-offset: 2px;
+}
+
+/* ==================== HEADER (Sentician Floating Pill Nav - Transparent, No Background) ==================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent !important;
+    border-bottom: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    padding: 20px 0;
+}
+
+.header-inner {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.brand-logo-img {
+    height: 29px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.85));
+    transition: opacity var(--transition);
+}
+
+.brand-logo-img:hover {
+    opacity: 0.9;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(14, 16, 22, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset -2px -2px 6px 0 rgba(255, 255, 255, 0.05),
+                0 12px 30px -10px rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.nav-link {
+    padding: 7px 18px;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: color var(--transition), background var(--transition);
+}
+
+.nav-link:hover {
+    color: #FFFFFF;
+}
+
+.nav-link.is-active {
+    color: #FFFFFF;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.05);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 18px;
+    height: 1.5px;
+    background: var(--text-primary);
+}
+
+.mobile-drawer {
+    border-top: 1px solid var(--border-subtle);
+    background: #050608;
+    padding: 18px 0 24px;
+}
+
+.mobile-drawer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-nav-link {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+}
+
+.mobile-nav-link.is-active {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.mobile-drawer-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ==================== 1. EXACT COSMOS AURORA HERO ==================== */
+.hero-cosmos {
+    position: relative;
+    margin-top: -92px;
+    padding: 160px 0 0;
+    background-color: #000000;
+}
+
+@media (max-width: 810px) {
+    .hero-cosmos {
+        padding: 128px 0 0;
+    }
+}
+
+/* The exact background asset with organic slow flow */
+.cosmos-bg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    will-change: transform;
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cosmos-bg-img-wrap {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    transform-origin: 50% 65%;
+    will-change: transform, filter;
+    animation: cosmosAuroraDrift 22s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
+
+.cosmos-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* Organic breathing background flow matching sen1.mp4 and Sentician */
+@keyframes cosmosAuroraDrift {
+    0% {
+        transform: scale(1.0) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.04) saturate(1.02);
+    }
+    25% {
+        transform: scale(1.048) translate3d(-1.5%, -0.9%, 0);
+        filter: brightness(1.09) contrast(1.06) saturate(1.10);
+    }
+    50% {
+        transform: scale(1.028) translate3d(1.3%, -1.4%, 0);
+        filter: brightness(1.15) contrast(1.08) saturate(1.16);
+    }
+    75% {
+        transform: scale(1.06) translate3d(-0.7%, 0.5%, 0);
+        filter: brightness(1.07) contrast(1.05) saturate(1.08);
+    }
+    100% {
+        transform: scale(1.0) translate3d(0, 0, 0);
+        filter: brightness(1.0) contrast(1.04) saturate(1.02);
+    }
+}
+
+/* Flowing luminous aurora curtains (amber on left, electric cyan on right) */
+.cosmos-aurora-glow-layer {
+    position: absolute;
+    inset: -10%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.65;
+    background:
+        radial-gradient(circle 560px at 26% 82%, rgba(255, 138, 0, 0.40), transparent 72%),
+        radial-gradient(circle 580px at 74% 80%, rgba(0, 132, 255, 0.44), transparent 72%),
+        radial-gradient(circle 760px at 50% 92%, rgba(255, 180, 60, 0.22), transparent 75%);
+    filter: blur(48px);
+    will-change: transform, opacity;
+    animation: cosmosAuroraBreath 16s ease-in-out infinite alternate;
+}
+
+@keyframes cosmosAuroraBreath {
+    0% {
+        transform: scale(0.96) translate3d(0, 0, 0);
+        opacity: 0.52;
+    }
+    50% {
+        transform: scale(1.08) translate3d(-1.8%, -1.2%, 0);
+        opacity: 0.85;
+    }
+    100% {
+        transform: scale(1.02) translate3d(1.5%, 0.8%, 0);
+        opacity: 0.60;
+    }
+}
+
+/* Planetary atmosphere horizon light beam */
+.cosmos-horizon-beam {
+    position: absolute;
+    bottom: 14%;
+    left: 8%;
+    right: 8%;
+    height: 140px;
+    background: radial-gradient(ellipse 65% 50% at 50% 100%, rgba(255, 255, 255, 0.35) 0%, rgba(0, 132, 255, 0.24) 40%, transparent 75%);
+    mix-blend-mode: screen;
+    filter: blur(18px);
+    opacity: 0.70;
+    pointer-events: none;
+    animation: cosmosHorizonPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes cosmosHorizonPulse {
+    0% {
+        opacity: 0.48;
+        transform: scaleY(0.92);
+    }
+    50% {
+        opacity: 0.86;
+        transform: scaleY(1.18);
+    }
+    100% {
+        opacity: 0.48;
+        transform: scaleY(0.92);
+    }
+}
+
+/* Twinkling ambient star sparkles */
+.cosmos-stars-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.85;
+}
+
+/* Exact high-definition looping aurora cosmos video */
+.cosmos-bg-video {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center top;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cosmos-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 240px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 40%, #000000 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-cosmos-inner {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-center-copy {
+    max-width: 820px;
+    margin: 0 auto 130px;
+    text-align: center;
+}
+
+@media (max-width: 810px) {
+    .hero-center-copy {
+        margin-bottom: 71px;
+    }
+}
+
+.announcement-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 18px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    font-size: 0.83rem;
+    color: #E2E8F0;
+    margin-bottom: 24px;
+    transition: border-color var(--transition);
+}
+
+.announcement-pill:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.hero-title--xl {
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+}
+
+.hero-subtitle--center {
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #CBD5E1;
+}
+
+.hero-actions--center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Embedded Dashboard Preview Peeking Over Horizon (Matching Sentician Exact) */
+.hero-dashboard-peek {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    padding: 0 40px;
+}
+
+@media (max-width: 810px) {
+    .hero-dashboard-peek {
+        padding: 0;
+    }
+}
+
+.dashboard-img-wrap {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: none;
+    box-shadow: 0 -16px 60px rgba(0, 0, 0, 0.9), 0 30px 90px rgba(0, 0, 0, 0.95);
+    background: #0A0B0E;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 76.5%, rgba(0, 0, 0, 0.45) 90%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 76.5%, rgba(0, 0, 0, 0.45) 90%, transparent 100%);
+}
+
+.dashboard-mockup-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
+}
+
+/* ==================== 2. STATEMENT BAND (Sentician Split Layout & Rotating Orb) ==================== */
+.statement-band {
+    position: relative;
+    background-color: #000000;
+    padding: 100px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.statement-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    box-sizing: border-box;
+}
+
+.statement-text-col {
+    flex: 1 1 0;
+    max-width: 775px;
+    width: 100%;
+}
+
+.statement-text {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.8vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Rotating Orb Column (Matching Sentician Illustration Exactly) */
+.statement-orb-col {
+    flex: 0 0 346px;
+    width: 346px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statement-orb-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 346px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statement-orb-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    filter: brightness(1.3);
+    will-change: transform;
+    animation: orbSlowRotate 28s linear infinite;
+}
+
+@keyframes orbSlowRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.statement-orb-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Stationary Badge Centered on Top of Rotating Orb */
+.statement-orb-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 35%;
+    max-width: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.statement-badge-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.45));
+}
+
+@media (max-width: 900px) {
+    .statement-band {
+        padding: 80px 0;
+    }
+
+    .statement-inner {
+        flex-direction: column;
+        gap: 48px;
+        padding: 0 20px;
+    }
+
+    .statement-text {
+        font-size: clamp(26px, 5.5vw, 36px);
+        text-align: left;
+    }
+
+    .statement-orb-col {
+        flex: 0 0 auto;
+        width: clamp(220px, 55vw, 300px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .statement-orb-circle {
+        animation: none;
+    }
+}
+
+.section {
+    padding: 88px 0;
+    background-color: #000000;
+}
+
+.split-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 42px;
+}
+
+.split-section-head h2 {
+    font-size: clamp(2rem, 3.6vw, 2.85rem);
+    font-weight: 600;
+}
+
+.split-section-head p {
+    max-width: 380px;
+    font-size: 0.98rem;
+    text-align: right;
+    color: var(--text-secondary);
+}
+
+/* ==================== 3. EXCEPTIONALITIES BENTO GRID (Matching sen2.mp4 & Sentician Exactly) ==================== */
+.exceptionalities-bento {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.bento-row {
+    display: grid;
+    gap: 24px;
+    width: 100%;
+}
+
+.bento-row--top {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bento-row--bottom {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bento-card {
+    position: relative;
+    border-radius: 24px;
+    background-color: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 432px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.bento-card:hover {
+    border-color: rgba(125, 164, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.bento-visual {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background-color: #040507;
+    flex: 1 1 auto;
+}
+
+.bento-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(1.2);
+    pointer-events: none;
+    user-select: none;
+}
+
+.bento-text {
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(6, 7, 10, 0) 0%, rgba(6, 7, 10, 0.95) 24%, #06070A 100%);
+    margin-top: -30px;
+}
+
+.bento-text h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.bento-text p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #8E9BAE;
+    margin: 0;
+}
+
+/* Inner Glass Card for Control & Flexibility (Matching Sentician Image 5) */
+.bento-inner-box {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 18px 20px;
+    background: rgba(6, 7, 10, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    margin: 0 16px 16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.bento-inner-box h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+}
+
+.bento-inner-box p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #8E9BAE;
+    margin: 0;
+}
+
+/* ---------- 1. Speed Wireframe & Micro-Streaks (Matching sen16.mp4) ---------- */
+.speed-network-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.speed-streaks-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.speed-streak {
+    position: absolute;
+    width: 14px;
+    height: 2.5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), #FFFFFF 80%);
+    box-shadow: 0 0 10px 2px rgba(56, 189, 248, 0.85);
+    will-change: transform, opacity;
+}
+
+.speed-streak--1 { top: 24%; left: -10%; transform: rotate(15deg); animation: streakFlyA 2.6s linear infinite; }
+.speed-streak--2 { top: 44%; left: 105%; transform: rotate(-10deg); background: linear-gradient(90deg, #FFFFFF 20%, rgba(251, 191, 36, 0.3)); box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.85); animation: streakFlyB 3.1s linear infinite 0.5s; }
+.speed-streak--3 { top: 14%; left: 20%; transform: rotate(38deg); animation: streakFlyC 2.9s linear infinite 1.1s; }
+.speed-streak--4 { top: 68%; left: -5%; transform: rotate(-9deg); animation: streakFlyA 3.4s linear infinite 0.8s; }
+.speed-streak--5 { top: 12%; left: 68%; transform: rotate(-52deg); background: linear-gradient(90deg, #FFFFFF 20%, rgba(251, 191, 36, 0.3)); box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.85); animation: streakFlyB 2.7s linear infinite 1.4s; }
+.speed-streak--6 { top: 34%; left: 32%; transform: rotate(38deg); animation: streakFlyC 2.4s linear infinite 0.2s; }
+.speed-streak--7 { top: 52%; left: 80%; transform: rotate(15deg); animation: streakFlyB 3.2s linear infinite 1.8s; }
+
+@keyframes streakFlyA {
+    0% { transform: translate3d(-40px, -10px, 0) rotate(15deg); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate3d(520px, 130px, 0) rotate(15deg); opacity: 0; }
+}
+
+@keyframes streakFlyB {
+    0% { transform: translate3d(40px, 10px, 0) rotate(-12deg); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate3d(-520px, -110px, 0) rotate(-12deg); opacity: 0; }
+}
+
+@keyframes streakFlyC {
+    0% { transform: translate3d(-30px, -25px, 0) rotate(38deg); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translate3d(320px, 250px, 0) rotate(38deg); opacity: 0; }
+}
+
+/* ---------- 2. Deep Capabilities Circuit Brain (Matching sen17.mp4 1:1) ---------- */
+.bento-card--fullbg {
+    justify-content: flex-end;
+}
+
+.bento-card--fullbg .bento-visual {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+.bento-inner-box--sheer {
+    background: rgba(8, 10, 16, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 0 20px 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.bento-visual--brain {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.bento-visual--brain .bento-bg-img {
+    position: absolute;
+    inset: 0;
+}
+
+/* Exact 1:1 PCB Brain Scale & Position */
+.capabilities-brain-svg {
+    position: absolute;
+    width: min(88%, 400px);
+    height: auto;
+    max-width: none;
+    left: 50%;
+    top: 36%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    overflow: visible;
+    z-index: 3;
+}
+
+.brain-pulse-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    filter: drop-shadow(0 0 6px #fff)
+            drop-shadow(0 0 14px rgba(255,255,255,0.85));
+}
+
+.brain-pulse-node--a,
+.brain-pulse-node--b {
+    animation: brainPairA 3.6s ease-in-out infinite;
+}
+
+.brain-pulse-node--c,
+.brain-pulse-node--d {
+    animation: brainPairB 3.6s ease-in-out infinite;
+}
+
+@keyframes brainPairA {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.08; }
+}
+
+@keyframes brainPairB {
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 1; }
+}
+
+/* ---------- 3. Control Animated Vertical Capsule Sliders (Matching sen2.mp4 & Sentician Image 5) ---------- */
+.control-sliders-wrapper {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    z-index: 2;
+    width: 100%;
+}
+
+.control-slider {
+    width: 32px;
+    height: 175px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.control-slider .slider-track {
+    width: 32px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: relative;
+    overflow: visible;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.control-slider .slider-spine {
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 2px;
+}
+
+.control-slider .slider-handle {
+    position: absolute;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #07080B;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 16px rgba(255, 170, 0, 0.95), 0 0 8px rgba(0, 132, 255, 0.85);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.control-slider--1 .slider-handle {
+    animation: sliderHandle1 4.5s ease-in-out infinite alternate;
+}
+.control-slider--2 .slider-handle {
+    animation: sliderHandle2 3.8s ease-in-out infinite alternate;
+}
+.control-slider--3 .slider-handle {
+    animation: sliderHandle3 5.2s ease-in-out infinite alternate;
+}
+
+@keyframes sliderHandle1 {
+    0% { top: 30%; }
+    50% { top: 55%; }
+    100% { top: 30%; }
+}
+
+@keyframes sliderHandle2 {
+    0% { top: 78%; }
+    50% { top: 58%; }
+    100% { top: 78%; }
+}
+
+@keyframes sliderHandle3 {
+    0% { top: 22%; }
+    50% { top: 42%; }
+    100% { top: 22%; }
+}
+
+/* ---------- 4. Flexibility Infinite Marquee Square Glass Tiles (Matching sen2.mp4 & Sentician Image 5) ---------- */
+.flex-marquee-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.flex-marquee-track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    will-change: transform;
+}
+
+.flex-marquee-track--left {
+    animation: marqueeLeft 22s linear infinite;
+}
+
+.flex-marquee-track--right {
+    animation: marqueeRight 24s linear infinite;
+}
+
+@keyframes marqueeLeft {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marqueeRight {
+    0% { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.flex-tile {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.flex-tile img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* ---------- 5. Contact Card in Bento Bottom Row (Matching Sentician Image 5) ---------- */
+.bento-card--contact {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 432px;
+    background-color: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 24px;
+    box-sizing: border-box;
+}
+
+.contact-card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card-title {
+    font-size: clamp(1.85rem, 2.2vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.contact-card-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #8E9BAE;
+    margin: 14px 0 0 0;
+}
+
+.contact-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.btn-card-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 16px;
+    background: #000000;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 20px rgba(0, 132, 255, 0.5), inset -4px 3px 9px rgba(0, 132, 255, 0.6), inset 3px -2px 8px rgba(255, 205, 125, 0.6);
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.btn-card-primary:hover {
+    box-shadow: 0 0 28px rgba(0, 132, 255, 0.7), inset -4px 3px 12px rgba(0, 132, 255, 0.8), inset 3px -2px 10px rgba(255, 205, 125, 0.8);
+    transform: translateY(-1px);
+}
+
+.btn-card-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #CBD5E1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.btn-card-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .capabilities-brain-svg {
+        width: 75%;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .bento-visual--brain {
+        min-height: 300px;
+    }
+}
+
+/* ==================== 4. ALL-IN-ONE ORGANIZATION OS (Matching sen3.mp4 & Sentician Sticky Stack) ==================== */
+.org-os-section {
+    padding: 96px 0;
+    overflow: visible;
+}
+
+.org-os-eyebrow-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.org-os-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: rgb(132, 145, 171);
+    white-space: nowrap;
+}
+
+.org-os-tag-pill img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.org-os-header-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(125, 164, 255, 0.16);
+}
+
+.org-os-head {
+    align-items: flex-end;
+    margin-bottom: 56px;
+}
+
+.org-os-head-main {
+    max-width: 650px;
+}
+
+.org-os-head-main h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.org-os-head .org-os-head-sub {
+    max-width: 440px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    text-align: right;
+}
+
+.org-os-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 44px;
+    width: 100%;
+    position: relative;
+}
+
+/* Sticky Left Navigation Sidebar */
+.org-os-sidebar {
+    flex: 0 0 280px;
+    width: 280px;
+    position: sticky;
+    top: 120px;
+    z-index: 4;
+}
+
+.org-os-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.org-os-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 12px;
+    position: relative;
+    color: rgb(155, 169, 196);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.org-os-nav-item:hover {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.org-os-nav-item.is-active {
+    color: #FFFFFF;
+}
+
+.org-os-nav-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+.org-os-nav-item.is-active .org-os-nav-icon {
+    opacity: 1;
+}
+
+.org-os-nav-label {
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.org-os-nav-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(125, 164, 255, 0.16);
+    overflow: visible;
+}
+
+.org-os-nav-highlight {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    width: 0%;
+    background: rgb(1, 117, 255);
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.org-os-nav-item.is-active .org-os-nav-highlight {
+    width: 52%;
+}
+
+/* Stacked Feature Screens on Right */
+.org-os-screens {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    min-width: 0;
+}
+
+.org-os-card {
+    --card-shift-x: 0px;
+    display: grid;
+    grid-template-columns: 1.06fr 0.94fr;
+    align-items: stretch;
+    gap: 24px;
+    border-radius: 24px;
+    background-color: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    overflow: hidden;
+    min-height: 417px;
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.75);
+    position: relative;
+    scroll-margin-top: 120px;
+    transform: translate3d(var(--card-shift-x, 0px), 0, 0);
+    will-change: transform;
+    transition: border-color 0.3s ease;
+}
+
+.org-os-card--shift {
+    --card-shift-x: 68px;
+}
+
+.org-os-card:hover {
+    border-color: rgba(125, 164, 255, 0.32);
+}
+
+.org-os-card-content {
+    padding: 32px 12px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    z-index: 2;
+}
+
+.org-os-card-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.org-os-card-title-group h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(22px, 2.1vw, 28px);
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.org-os-card-title-group p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.4;
+    color: rgb(176, 190, 217);
+    margin: 0;
+}
+
+.org-os-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.org-os-feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.5;
+    color: rgb(209, 218, 236);
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.org-os-feature-tag:hover {
+    border-color: rgba(125, 164, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.org-os-feature-tag svg {
+    width: 18px;
+    height: 18px;
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.org-os-cta-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.org-os-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.org-os-cta-btn:hover {
+    border-color: rgba(1, 117, 255, 0.55);
+    background: rgba(1, 117, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.org-os-cta-accent {
+    background: linear-gradient(277deg, rgb(1, 117, 255) 0%, rgba(250, 252, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+}
+
+/* Right Visual Stage in Each Screen */
+.org-os-card-visual {
+    position: relative;
+    width: 100%;
+    min-height: 410px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.org-os-bg-figure {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(-90deg, #000 0%, #000 78%, transparent 100%);
+    mask-image: linear-gradient(-90deg, #000 0%, #000 78%, transparent 100%);
+}
+
+.org-os-bg-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Screen 1: Floating Prompt Box with Live Typewriter */
+.org-os-prompt-bar {
+    position: absolute;
+    bottom: 44px;
+    left: 26px;
+    right: 26px;
+    padding: 10px 20px 10px 12px;
+    border-radius: 16px;
+    background: rgba(8, 10, 15, 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    z-index: 3;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+.org-os-prompt-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.org-os-prompt-avatar {
+    margin: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.65);
+}
+
+.org-os-prompt-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.org-os-prompt-text {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.org-os-cursor {
+    display: inline-block;
+    margin-left: 1px;
+    color: #FFFFFF;
+    animation: orgCursorBlink 0.9s steps(2, start) infinite;
+}
+
+@keyframes orgCursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Screen 2 & 3: Rotating 3D Globe */
+.org-os-globe {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.org-os-globe--lg {
+    width: 240px;
+    height: 240px;
+    z-index: 2;
+    filter: brightness(1.3) drop-shadow(0 21px 11px rgba(0, 0, 0, 0.43));
+}
+
+.org-os-globe--sm {
+    width: 145px;
+    height: 145px;
+    top: 52%;
+    left: 52%;
+    z-index: 3;
+    filter: brightness(1.25) drop-shadow(0 16px 14px rgba(0, 0, 0, 0.5));
+}
+
+.org-os-globe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: orbSlowRotate 28s linear infinite;
+}
+
+.org-os-globe-wordmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-family: 'Inter', sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Screen 3: 6 Top Icons + Animated 6-Stream Funnel */
+.org-os-streams-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 287px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.5) 9%, #000 25%, #000 100%);
+    mask-image: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.5) 9%, #000 25%, #000 100%);
+    pointer-events: none;
+}
+
+.org-os-streams-logos {
+    width: 287px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.org-os-logos-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.org-os-stream-logo {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.org-os-stream-logo img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.org-os-streams-svg {
+    width: 262px;
+    height: 317px;
+    display: block;
+}
+
+.stream-pulse {
+    stroke-dashoffset: 220;
+    animation: orgStreamPulse 3.4s linear infinite;
+}
+
+.stream-pulse--2 { animation-delay: 0.5s; }
+.stream-pulse--3 { animation-delay: 1.1s; }
+.stream-pulse--4 { animation-delay: 1.6s; }
+.stream-pulse--5 { animation-delay: 0.8s; }
+.stream-pulse--6 { animation-delay: 1.9s; }
+
+@keyframes orgStreamPulse {
+    0% { stroke-dashoffset: 240; }
+    100% { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 1024px) {
+    .org-os-layout {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .org-os-sidebar {
+        position: static;
+        width: 100%;
+        flex: none;
+    }
+
+    .org-os-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 12px;
+    }
+
+    .org-os-nav-item {
+        width: auto;
+        flex: 1 1 220px;
+    }
+
+    .org-os-card,
+    .org-os-card--shift {
+        grid-template-columns: 1fr;
+        --card-shift-x: 0px !important;
+        transform: none !important;
+    }
+
+    .org-os-card-content {
+        padding: 28px 24px;
+    }
+
+    .org-os-head .org-os-head-sub {
+        text-align: left;
+        max-width: 100%;
+    }
+}
+
+/* ==================== 5. MULTIPLE PRODUCTS (Matching sen5.mp4 & Sentician Exact) ==================== */
+.products-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: visible;
+}
+
+.products-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.products-bg-glow {
+    margin: 0;
+    position: absolute;
+    inset: -203px -391px -251px -311px;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.products-bg-glow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.products-heading-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.products-eyebrow-row {
+    margin-bottom: 0;
+}
+
+.products-eyebrow-row .org-os-tag-pill img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+.products-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.products-title-main {
+    flex: 1 0 0;
+    max-width: 680px;
+}
+
+.products-title-main h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.products-title-sub {
+    flex: 1 0 0;
+    max-width: 310px;
+}
+
+.products-title-sub p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    text-align: left;
+    margin: 0;
+}
+
+.products-showcase-wrap {
+    width: 100%;
+    max-width: 1120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.products-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: min-content;
+}
+
+.product-tab-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.product-tab-pill:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.product-tab-pill.is-active {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.products-stage-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 72px;
+    width: 100%;
+    min-height: 475px;
+    padding: 0;
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    position: relative;
+    overflow: hidden;
+}
+
+.products-stage-left {
+    flex: 1 0 0;
+    padding: 40px 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    min-width: 0;
+}
+
+.vertical-panel-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+    animation: prodCopyFade 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vertical-panel-copy[hidden] {
+    display: none !important;
+}
+
+@keyframes prodCopyFade {
+    0% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.products-copy-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+}
+
+.products-copy-top h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.products-copy-top p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    margin: 0;
+}
+
+.products-points-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.products-point-pill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: rgba(255, 254, 250, 0);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(209, 212, 227);
+}
+
+.products-check-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(255, 255, 255, 0.31) 0px 0px 4px 0px inset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.products-check-badge svg {
+    width: 13px;
+    height: 10px;
+    display: block;
+}
+
+.products-stage-spacer {
+    flex: 1 0 0;
+    height: 475px;
+    pointer-events: none;
+}
+
+.products-dash-figure {
+    margin: 0;
+    position: absolute;
+    top: 27px;
+    bottom: 29px;
+    right: -169px;
+    width: 673px;
+    aspect-ratio: 1.60357;
+    z-index: 1;
+    filter: drop-shadow(rgba(0, 0, 0, 0.18) -16px 11px 7px);
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+    will-change: transform, opacity;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.products-dash-figure.is-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                transform 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+.products-dash-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+}
+
+.products-dash-brand {
+    position: absolute;
+    top: 4.35%;
+    left: 2.1%;
+    transform: translateY(-50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 16.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Bottom 4 Vertical Cards Row (Healthcare, Marketing, Ecommerce, Development) */
+.products-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    gap: 48px 60px;
+    width: 100%;
+    z-index: 1;
+}
+
+.products-mini-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    max-width: 235px;
+}
+
+.products-mini-icon-ring {
+    padding: 2px;
+    border-radius: 24px;
+    background: linear-gradient(40deg, rgb(255, 205, 125) 0%, rgb(12, 15, 22) 45%, rgb(1, 117, 255) 100%);
+    box-shadow: rgba(255, 179, 73, 0.25) 0px 6px 24px 0px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-mini-icon-inner {
+    background-color: rgb(12, 15, 22);
+    border-radius: 22px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-mini-icon-inner img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+    display: block;
+}
+
+.products-mini-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.products-mini-label h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.products-mini-label p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(132, 145, 171);
+    margin: 0;
+}
+
+/* Shared Pill Check Stack for Section 6 */
+.pill-check-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pill-check-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+    color: #E2E8F0;
+}
+
+.check-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-medium);
+    color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+    .products-container {
+        gap: 56px;
+    }
+
+    .products-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .products-title-sub {
+        max-width: 100%;
+    }
+
+    .products-stage-card {
+        flex-direction: column;
+        gap: 28px;
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .products-stage-left {
+        padding: 0;
+        width: 100%;
+    }
+
+    .products-stage-spacer {
+        display: none;
+    }
+
+    .products-dash-figure {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        display: none;
+    }
+
+    .products-dash-figure.is-active {
+        display: block;
+    }
+
+    .products-bottom-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .products-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== 6. 3 STEPS TO KICKSTART (Matching sen6.mp4 & Sentician Exact) ==================== */
+.kickstart-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: visible;
+}
+
+.kickstart-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+}
+
+.kickstart-heading-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.kickstart-eyebrow-row {
+    margin-bottom: 0;
+}
+
+.kickstart-eyebrow-row .org-os-tag-pill img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+.kickstart-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.kickstart-title-main {
+    flex: 1 0 0;
+    max-width: 680px;
+}
+
+.kickstart-title-main h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.kickstart-title-sub {
+    flex: 1 0 0;
+    max-width: 310px;
+}
+
+.kickstart-title-sub p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    text-align: left;
+    margin: 0;
+}
+
+.kickstart-content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+/* Sticky Progress Bar (01. 02. 03. + Animated Gradient Beam) */
+.kickstart-numbers-bar {
+    position: sticky;
+    top: 120px;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kickstart-numbers-inner {
+    flex: 1 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0 6px;
+    position: relative;
+}
+
+.kickstart-num-col {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.kickstart-num-col span {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+}
+
+.kickstart-beam-track {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(125, 164, 255, 0.16);
+    overflow: hidden;
+}
+
+.kickstart-beam-line {
+    background: linear-gradient(90deg, #FFAC0A 0%, #0175FF 100%);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    will-change: transform;
+    transform: translateX(-92%);
+}
+
+/* Sticky Stacking Cards (Screens) */
+.kickstart-screens-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+.kickstart-step-wrapper {
+    width: 100%;
+    position: sticky;
+    will-change: transform;
+}
+
+.kickstart-step-wrapper--1 {
+    top: 214px;
+    z-index: 1;
+}
+
+.kickstart-step-wrapper--2 {
+    top: 240px;
+    z-index: 2;
+}
+
+.kickstart-step-wrapper--3 {
+    top: 214px;
+    z-index: 3;
+}
+
+.kickstart-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 64px;
+    width: 100%;
+    border-radius: 24px;
+    background-color: rgb(6, 7, 10);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    overflow: hidden;
+    position: relative;
+}
+
+.kickstart-card-left {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0 66px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.kickstart-card-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.kickstart-card-title-group h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(26px, 2.8vw, 34px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    max-width: 380px;
+    margin: 0;
+}
+
+.kickstart-card-title-group p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(132, 145, 171);
+    max-width: 400px;
+    margin: 0;
+}
+
+.kickstart-points-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.kickstart-card-right {
+    flex: 1.5 0 0;
+    height: 558px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 11.2349%, rgb(0, 0, 0) 100%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 11.2349%, rgb(0, 0, 0) 100%);
+}
+
+.kickstart-card-figure {
+    width: 658px;
+    height: 100%;
+    aspect-ratio: 1.17832;
+    flex: none;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    filter: brightness(1.5);
+}
+
+.kickstart-card-figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media (max-width: 1024px) {
+    .kickstart-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .kickstart-title-sub {
+        max-width: 100%;
+    }
+
+    .kickstart-step-wrapper {
+        position: relative;
+        top: auto;
+    }
+
+    .kickstart-card {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .kickstart-card-left {
+        padding: 28px 24px 0;
+        width: 100%;
+    }
+
+    .kickstart-card-right {
+        width: 100%;
+        height: 360px;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .kickstart-card-figure {
+        width: 100%;
+    }
+}
+
+/* ==================== 7. MULTI-LAYER SECURITY ==================== */
+.security-split {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.security-left h2 {
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.security-left > p {
+    margin-bottom: 24px;
+}
+
+.security-layer-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.security-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    text-align: left;
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.security-pill.is-active,
+.security-pill:hover {
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.security-detail-note {
+    font-size: 0.88rem;
+    color: #CBD5E1;
+    min-height: 44px;
+}
+
+/* 3 Frosted Translucent Slabs */
+.security-slabs-stage {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+}
+
+.slabs-glow {
+    position: absolute;
+    inset: 10%;
+    border-radius: 28px;
+    background: linear-gradient(125deg, rgba(255, 138, 0, 0.55), rgba(0, 132, 255, 0.55) 60%);
+    filter: blur(46px);
+    opacity: 0.75;
+}
+
+.glass-slab {
+    position: absolute;
+    width: 220px;
+    height: 310px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.glass-slab .slab-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.94;
+}
+
+.slab-1 { transform: translateX(-95px) rotateY(-18deg) scale(0.92); z-index: 1; }
+.slab-2 { transform: translateX(0) rotateY(-14deg) scale(0.98); z-index: 2; }
+.slab-3 { transform: translateX(95px) rotateY(-10deg) scale(1.04); z-index: 3; }
+
+/* ==================== 8. TESTIMONIALS ==================== */
+.testimonial-feature-card {
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 28px;
+}
+
+.testimonial-slide {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.testimonial-slide[hidden] { display: none; }
+
+.testimonial-portrait {
+    position: relative;
+    height: 300px;
+    border-radius: 18px;
+    background: #08090C;
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.portrait-aura {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 132, 255, 0.35), rgba(255, 138, 0, 0.2), transparent 72%);
+    filter: blur(20px);
+}
+
+.portrait-avatar-lg {
+    position: relative;
+    z-index: 2;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1A1D28, #0C0D14);
+    border: 1px solid var(--border-medium);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.portrait-badge {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 5px 11px;
+    border-radius: var(--radius-pill);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border-subtle);
+    color: #CBD5E1;
+}
+
+.testimonial-body blockquote {
+    margin: 0 0 24px;
+    font-family: var(--font-display);
+    font-size: clamp(1.18rem, 2vw, 1.48rem);
+    line-height: 1.45;
+    color: #F8FAFC;
+}
+
+.testimonial-meta strong {
+    display: block;
+    font-size: 1.05rem;
+}
+
+.testimonial-meta span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tdot {
+    width: 24px;
+    height: 4px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.16);
+    cursor: pointer;
+    transition: background var(--transition), width var(--transition);
+}
+
+.tdot.is-active {
+    width: 38px;
+    background: #FFFFFF;
+}
+
+/* ==================== 9. PRICING ==================== */
+.billing-toggle-wrap {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.billing-toggle-wrap--left {
+    justify-content: flex-start;
+}
+
+.billing-toggle {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+}
+
+.billing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.billing-btn.is-active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+}
+
+.discount-pill {
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+}
+
+.pricing-card.is-featured {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(20, 22, 30, 0.82);
+}
+
+.pricing-tier-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #CBD5E1;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.price-value {
+    font-family: var(--font-display);
+    font-size: 2.55rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.price-unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.pricing-custom-desc {
+    font-size: 0.9rem;
+}
+
+.sentician-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.sentician-checklist li {
+    position: relative;
+    padding-left: 24px;
+    font-size: 0.88rem;
+    color: #CBD5E1;
+}
+
+.sentician-checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FFFFFF;
+    font-size: 0.82rem;
+}
+
+.pricing-card-foot {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.foot-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+/* ==================== 10. 2-COLUMN FAQ (Matching sen7.mp4 & Sentician Exact) ==================== */
+.faq-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+}
+
+.faq-heading-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.faq-eyebrow-row {
+    margin-bottom: 0;
+}
+
+.faq-eyebrow-row .org-os-tag-pill img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+.faq-title-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.faq-title-main {
+    flex: 1 0 0;
+    max-width: 680px;
+}
+
+.faq-title-main h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.faq-title-sub {
+    flex: 1 0 0;
+    max-width: 310px;
+}
+
+.faq-title-sub p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    text-align: left;
+    margin: 0;
+}
+
+.faq-columns-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-col {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.faq-item {
+    width: 100%;
+    border-radius: 24px;
+    background-color: rgb(12, 15, 22);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.38s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.faq-trigger {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.is-open .faq-trigger {
+    border-bottom-color: rgb(47, 57, 80);
+}
+
+.faq-q-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    flex: 0.97 0 0;
+    user-select: none;
+}
+
+.faq-icon-wrap {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.faq-item.is-open .faq-icon-wrap {
+    transform: rotate(45deg);
+}
+
+.faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.is-open .faq-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.faq-panel-overflow {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.faq-panel-inner {
+    padding: 20px;
+}
+
+.faq-panel-inner p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(132, 145, 171);
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .faq-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .faq-title-sub {
+        max-width: 100%;
+    }
+
+    .faq-columns-wrap {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+/* ==================== 11. INTEGRATION SECTION (Matching sen8.mp4 & Sentician .framer-1kdajem) ==================== */
+.section-integration {
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.integration-container {
+    z-index: 1;
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.integration-info {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    position: relative;
+}
+
+.integration-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.integration-eyebrow-row {
+    margin-bottom: 0;
+}
+
+.integration-eyebrow-row .org-os-tag-pill img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+.integration-title-wrap {
+    width: 100%;
+}
+
+.integration-title-wrap h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.integration-subtext {
+    width: 100%;
+    max-width: 310px;
+}
+
+.integration-subtext p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(176, 190, 217);
+    margin: 0;
+}
+
+.integration-cta-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.integration-content {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 57px 0 0;
+    position: relative;
+}
+
+.integration-grid-3x2 {
+    flex: 1 0 0;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(50px, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    justify-content: center;
+    gap: 54px;
+    width: 100%;
+    max-width: 425px;
+    position: relative;
+}
+
+.integration-card-outer {
+    width: 102px;
+    padding: 2px;
+    border-radius: 24px;
+    background: linear-gradient(40deg, rgb(255, 205, 125) 0%, rgb(12, 15, 22) 45%, rgb(1, 117, 255) 100%);
+    box-shadow: rgba(255, 179, 73, 0.25) 0px 6px 24px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: clip;
+    text-decoration: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.integration-card-outer:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(255, 179, 73, 0.4) 0px 10px 30px 0px;
+}
+
+.integration-card-inner {
+    flex: 1 0 0;
+    padding: 22px;
+    border-radius: 24px;
+    background-color: rgb(12, 15, 22);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: clip;
+}
+
+.integration-card-icon {
+    aspect-ratio: 1;
+    width: 54px;
+    height: 54px;
+    min-width: 32px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.integration-card-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.integration-masking {
+    max-width: 2057px;
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    pointer-events: none;
+    z-index: 0;
+    overflow: clip;
+    -webkit-mask-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.84) 14.7264%, #000000 89.3797%, transparent 100%);
+    mask-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.84) 14.7264%, #000000 89.3797%, transparent 100%);
+}
+
+.integration-gradient-fig {
+    z-index: 0;
+    width: 100%;
+    max-width: 2057px;
+    height: 601px;
+    position: absolute;
+    top: 1px;
+    left: calc(50% - min(2057px, 100%) / 2);
+    margin: 0;
+}
+
+.integration-gradient-fig img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ==================== 12. CLOSING CTA & MONUMENTAL FOOTER (Matching sen8.mp4 & Sentician .framer-8moa8) ==================== */
+.sentician-footer {
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sentician-footer-container {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    width: 100%;
+    padding: 80px 0 0;
+    position: relative;
+    overflow: visible;
+}
+
+.sentician-footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.sentician-footer-top-inner {
+    z-index: 1;
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.sentician-footer-top-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    position: relative;
+}
+
+.sentician-footer-top-text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(32px, 3.8vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 687px;
+    width: 100%;
+    margin: 0;
+}
+
+.sentician-footer-top-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(155, 169, 196);
+    text-align: center;
+    max-width: 460px;
+    width: 100%;
+    margin: 0;
+}
+
+.sentician-footer-top-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Monumental Horizon Wordmark Row (.framer-ystmvz) */
+.sentician-footer-logo-row {
+    mix-blend-mode: difference;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    height: min-content;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.sentician-footer-bg-fig {
+    z-index: 0;
+    flex: none;
+    width: 110%;
+    height: 620px;
+    position: absolute;
+    top: calc(19.3416% - 310px);
+    left: -5%;
+    margin: 0;
+    pointer-events: none;
+    overflow: visible;
+    -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 11.6378%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 11.6378%, rgba(0, 0, 0, 0) 100%);
+}
+
+.sentician-footer-bg-fig img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sentician-wordmark-item {
+    aspect-ratio: 4.0339;
+    width: 952px;
+    height: 236px;
+    flex: none;
+    position: relative;
+    mix-blend-mode: overlay;
+    overflow: clip;
+    user-select: none;
+}
+
+.sentician-wordmark-item--ghost {
+    opacity: 0.2;
+}
+
+.sentician-wordmark-item--main {
+    opacity: 1;
+}
+
+.sentician-wordmark-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* 4-Column Footer Links & Bottom Copyright (.framer-1x91rc6) */
+.sentician-footer-bottom-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.sentician-footer-links-outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    position: relative;
+}
+
+.sentician-footer-links-grid {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 28px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    position: relative;
+}
+
+.sentician-footer-col {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    min-width: 180px;
+}
+
+.sentician-footer-col-title {
+    width: 100%;
+}
+
+.sentician-footer-col-title p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.sentician-footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.sentician-footer-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sentician-footer-link span:first-child {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(155, 169, 196);
+    white-space: pre;
+    transition: color 0.25s ease;
+}
+
+.sentician-footer-link:hover span:first-child {
+    color: #FFFFFF;
+}
+
+.sentician-footer-link-line {
+    z-index: 1;
+    width: 6px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1), left 0.28s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.28s ease;
+}
+
+.sentician-footer-link:hover .sentician-footer-link-line {
+    width: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Bottom Copyright Bar (.framer-1n6snbj) */
+.sentician-footer-copy-outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    position: relative;
+}
+
+.sentician-footer-copy-line {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(125, 164, 255, 0.16);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sentician-footer-copy-row {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.sentician-footer-copy-left p,
+.sentician-footer-copy-right p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    color: rgb(155, 169, 196);
+    margin: 0;
+}
+
+.sentician-footer-copy-right p a {
+    color: rgb(155, 169, 196);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.sentician-footer-copy-right p a:hover {
+    color: #FFFFFF;
+}
+
+@media (max-width: 960px) {
+    .section-integration {
+        padding: 64px 24px;
+    }
+
+    .integration-container {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .integration-content {
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .integration-grid-3x2 {
+        gap: 28px;
+    }
+
+    .sentician-wordmark-item {
+        width: 580px;
+        height: 144px;
+    }
+
+    .sentician-footer-top,
+    .sentician-footer-links-outer,
+    .sentician-footer-copy-outer {
+        padding: 0 24px;
+    }
+
+    .sentician-footer-copy-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* ==================== INNER PAGES (Services, About, Integrations, Contact) ==================== */
+.page-hero {
+    margin-top: -92px;
+    padding: 136px 0 44px;
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: #000000;
+}
+
+.page-hero h1 {
+    font-size: clamp(2.2rem, 4.2vw, 3.35rem);
+    max-width: 780px;
+    margin-bottom: 16px;
+}
+
+.page-hero-sub {
+    font-size: 1.06rem;
+    max-width: 640px;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.filter-pill {
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-pill.is-active {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--border-medium);
+    color: #FFFFFF;
+}
+
+.services-grid,
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.integrations-grid,
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card,
+.integration-card,
+.pillar-card,
+.value-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+}
+
+.service-card.is-hidden,
+.integration-card.is-hidden { display: none; }
+
+.service-card-top,
+.integration-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.timeline-chip {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.service-card h2,
+.integration-card h2 {
+    font-size: 1.32rem;
+    margin-bottom: 10px;
+}
+
+.service-card p,
+.integration-card p {
+    font-size: 0.93rem;
+    margin-bottom: 18px;
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.87rem;
+    color: #CBD5E1;
+}
+
+.check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FFFFFF;
+}
+
+.service-card-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.stack-chips span {
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.inline-link { font-size: 0.86rem; font-weight: 600; color: #FFFFFF; }
+
+.connector-monogram {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-medium);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+/* ROI Estimator, About, Contact */
+.roi-shell,
+.about-split,
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.roi-shell {
+    padding: 34px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+}
+
+.slider-group { margin: 18px 0; }
+.slider-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.9rem; }
+.slider-group input[type="range"] { width: 100%; accent-color: #FFFFFF; }
+
+.roi-output {
+    padding: 26px;
+    border-radius: var(--radius-md);
+    background: #08090C;
+    border: 1px solid var(--border-medium);
+}
+
+.roi-big-number {
+    font-family: var(--font-display);
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin: 6px 0;
+    color: #FFFFFF;
+}
+
+.roi-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+.roi-stat-box { padding: 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); }
+.roi-stat-box span { display: block; font-size: 0.74rem; color: var(--text-muted); }
+
+.logo-showcase-card {
+    padding: 52px 28px 34px;
+    border-radius: var(--radius-lg);
+    background: #08090C;
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.logo-palette-bar { display: flex; gap: 10px; }
+.logo-palette-bar span { width: 26px; height: 26px; border-radius: 50%; background: var(--sw); border: 1px solid rgba(255,255,255,0.28); }
+
+.linkedin-callout {
+    margin-top: 22px;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 18px; }
+.info-card, .contact-form-wrap { padding: 28px; border-radius: var(--radius-md); background: var(--bg-card); border: 1px solid var(--border-subtle); }
+.channel-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.channel-item { padding: 12px 14px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); }
+.channel-title { display: block; font-size: 0.74rem; color: var(--text-muted); }
+.channel-value { font-size: 0.9rem; font-weight: 500; }
+
+.hp-field { position: absolute; left: -9999px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-field label { font-size: 0.85rem; color: #CBD5E1; }
+.form-field input, .form-field select, .form-field textarea {
+    padding: 11px 14px;
+    border-radius: 10px;
+    background: #08090C;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+}
+.form-field select option { background: #0A0B0E; }
+.field-error { color: #FDA4AF; font-size: 0.8rem; }
+.form-alert { padding: 12px; border-radius: 10px; background: rgba(244,63,94,0.16); border: 1px solid rgba(244,63,94,0.4); margin-bottom: 16px; }
+.form-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.privacy-note { font-size: 0.78rem; color: var(--text-muted); }
+.success-panel { text-align: center; padding: 24px 12px; }
+.success-icon { width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,0.1); color: #FFFFFF; }
+.success-actions { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+
+/* ==================== AI SOLUTIONS PAGE & DETAIL SUBPAGE (Matching sen9.mp4 1:1) ==================== */
+.sentician-solutions-hero {
+    position: relative;
+    width: 100%;
+    margin-top: -92px;
+    min-height: 0;
+    padding: 150px 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.sentician-solutions-hero--detail {
+    min-height: 0;
+    padding: 152px 0 42px;
+}
+
+.sentician-solutions-aurora {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sentician-solutions-aurora img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    opacity: 0.96;
+}
+
+.sentician-solutions-aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0.65) 82%,
+        #000000 100%
+    );
+}
+
+@keyframes senticianSmoothIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 14px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.sentician-solutions-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.sentician-solutions-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9CA8C2;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sentician-solutions-eyebrow--link:hover {
+    color: #FFFFFF;
+}
+
+.sentician-solutions-eyebrow img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.sentician-solutions-title {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2.75rem, 5.4vw, 4.4rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    animation: senticianSmoothIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+}
+
+.sentician-solutions-title--detail {
+    font-size: clamp(2.6rem, 5vw, 4.25rem);
+    max-width: 820px;
+}
+
+.sentician-solutions-sub {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    color: #94A0B8;
+    max-width: 480px;
+    animation: senticianSmoothIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+/* Main Page: 3 Stacked Full-Width Solution Cards */
+.sentician-solutions-list-section {
+    position: relative;
+    padding: 4px 0 110px;
+    background-color: #000000;
+    z-index: 2;
+}
+
+.sentician-solutions-stack {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.sentician-sol-card:first-child {
+    animation: senticianSmoothIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.sentician-sol-card {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-sol-card:hover {
+    border-color: rgba(125, 164, 255, 0.28);
+}
+
+.sentician-sol-card-top {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    padding: 36px 42px 32px;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.sentician-sol-card-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding-right: 40px;
+    border-right: 1px solid rgba(125, 164, 255, 0.14);
+}
+
+.sentician-sol-card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sentician-sol-card-copy h2 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+.sentician-sol-card-copy p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    color: #8491AB;
+    max-width: 400px;
+}
+
+.sentician-sol-card-action {
+    display: flex;
+    align-items: center;
+}
+
+.sentician-learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 11px 22px;
+    border-radius: 12px;
+    background: #0B0E16;
+    border: 1px solid rgba(125, 164, 255, 0.2);
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sentician-learn-more-btn .learn-txt {
+    color: #8E9BB5;
+    transition: color 0.25s ease;
+}
+
+.sentician-learn-more-btn .more-txt {
+    color: #3A82F6;
+    transition: color 0.25s ease;
+}
+
+.sentician-learn-more-btn:hover {
+    background: #101522;
+    border-color: rgba(58, 130, 246, 0.5);
+    box-shadow: 0 0 24px rgba(58, 130, 246, 0.18);
+    transform: translateY(-1px);
+}
+
+.sentician-learn-more-btn:hover .learn-txt {
+    color: #FFFFFF;
+}
+
+.sentician-sol-card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sentician-sol-card-right h3 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.sentician-sol-bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.sentician-sol-bullet-list li {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: "Inter", sans-serif;
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #8E9BB5;
+}
+
+.sentician-sol-bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 1.5px;
+    background: #3A82F6;
+    box-shadow: 0 0 8px rgba(58, 130, 246, 0.65);
+    flex-shrink: 0;
+}
+
+.sentician-sol-card-banner {
+    display: block;
+    width: 100%;
+    height: 184px;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+}
+
+.sentician-sol-card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-sol-card:hover .sentician-sol-card-banner img {
+    transform: scale(1.025);
+}
+
+/* ==================== DETAIL SUBPAGE: 1. FEATURES ACCORDION + VISUAL ==================== */
+.sentician-sol-features-section {
+    padding: 28px 0 100px;
+    background-color: #000000;
+}
+
+.sentician-sol-features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.sentician-sol-features-split {
+    display: grid;
+    grid-template-columns: 1fr 1.14fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.sentician-sol-features-left {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.sentician-sol-features-left h2 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+}
+
+.sentician-sol-acc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sentician-sol-acc-item {
+    display: grid;
+    grid-template-columns: 2px 1fr;
+    gap: 22px;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.sentician-sol-acc-bar {
+    width: 2px;
+    height: 100%;
+    background: rgba(125, 164, 255, 0.16);
+    border-radius: 99px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sentician-sol-acc-bar-fill {
+    position: absolute;
+    inset: 0;
+    background: #0175FF;
+    box-shadow: 0 0 12px rgba(1, 117, 255, 0.8);
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+@keyframes solBarProgress {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+.sentician-sol-acc-item.is-active .sentician-sol-acc-bar-fill {
+    animation: solBarProgress 5.5s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sentician-sol-acc-item.is-active .sentician-sol-acc-bar-fill {
+        animation: none;
+        transform: scaleY(1);
+    }
+}
+
+.sentician-sol-acc-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.sentician-sol-acc-trigger {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 4px 0;
+    margin: 0;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: #8491AB;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.sentician-sol-acc-item:hover .sentician-sol-acc-trigger,
+.sentician-sol-acc-item.is-active .sentician-sol-acc-trigger {
+    color: #FFFFFF;
+}
+
+.sentician-sol-acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s ease;
+}
+
+.sentician-sol-acc-item.is-active .sentician-sol-acc-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.sentician-sol-acc-panel-inner {
+    overflow: hidden;
+}
+
+.sentician-sol-acc-panel-inner p {
+    margin: 10px 0 4px;
+    font-family: "Inter", sans-serif;
+    font-size: 15.5px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #8491AB;
+    max-width: 440px;
+}
+
+.sentician-sol-features-right {
+    width: 100%;
+}
+
+.sentician-sol-visual-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 768 / 553;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.6);
+}
+
+.sentician-sol-visual-pane {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(0.985);
+    pointer-events: none;
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-sol-visual-pane.is-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.sentician-sol-visual-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==================== DETAIL SUBPAGE: 2. USECASES SECTION ==================== */
+.sentician-sol-usecases-section {
+    padding: 90px 0 110px;
+    background-color: #000000;
+}
+
+.sentician-sol-usecases-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.sentician-sol-usecases-head {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sentician-sol-tabs-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sentician-sol-tab-btn {
+    appearance: none;
+    padding: 12px 26px;
+    border-radius: 12px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8491AB;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.sentician-sol-tab-btn:hover {
+    color: #FFFFFF;
+    border-color: rgba(125, 164, 255, 0.32);
+}
+
+.sentician-sol-tab-btn.is-active {
+    background: #FFFFFF;
+    color: #06070A;
+    border-color: #FFFFFF;
+}
+
+.sentician-sol-uc-stage {
+    position: relative;
+}
+
+.sentician-sol-uc-card {
+    display: none;
+    grid-template-columns: 1fr 1.08fr;
+    gap: 40px;
+    padding: 40px;
+    border-radius: 24px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    align-items: stretch;
+}
+
+.sentician-sol-uc-card.is-active {
+    display: grid;
+    animation: solFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes solFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sentician-sol-uc-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 8px 4px;
+}
+
+.sentician-sol-uc-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sentician-sol-uc-copy h3 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.65rem, 2.3vw, 2.15rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+.sentician-sol-uc-copy p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #8491AB;
+    max-width: 440px;
+}
+
+.sentician-sol-uc-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sentician-sol-uc-checks .kickstart-point-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(14, 17, 26, 0.72);
+    border: 1px solid rgba(125, 164, 255, 0.14);
+}
+
+.sentician-sol-uc-checks .kickstart-point-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #E2E8F0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sentician-sol-uc-checks .kickstart-point-icon svg {
+    width: 13px;
+    height: 13px;
+    display: block;
+}
+
+.sentician-sol-uc-checks .kickstart-point-text {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #CBD5E1;
+}
+
+.sentician-sol-uc-right {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 410px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    background: #080B12;
+}
+
+.sentician-sol-uc-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.92;
+}
+
+.sentician-sol-uc-chat {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.sentician-sol-uc-prompt-bubble {
+    align-self: flex-end;
+    max-width: 82%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: rgba(14, 18, 28, 0.86);
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    backdrop-filter: blur(12px);
+}
+
+.sentician-sol-uc-prompt-bubble p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #D5DDF0;
+}
+
+.sentician-sol-uc-response-card {
+    align-self: flex-start;
+    width: 88%;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(12, 16, 26, 0.88);
+    border: 1px solid rgba(125, 164, 255, 0.2);
+    backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sentician-sol-uc-resp-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    color: #94A0B8;
+}
+
+.sentician-sol-uc-resp-head img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.sentician-sol-uc-resp-body strong {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+.sentician-sol-uc-resp-body p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #9CA8C2;
+}
+
+.sentician-sol-uc-resp-meta span {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.sentician-sol-uc-resp-meta p {
+    margin: 2px 0 0;
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    color: #9CA8C2;
+}
+
+.sentician-sol-uc-resp-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sentician-sol-uc-start-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #06070A;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sentician-sol-uc-start-btn:hover {
+    background: #E2E8F0;
+    transform: translateY(-1px);
+}
+
+.sentician-sol-uc-card.is-active .sentician-sol-uc-prompt-bubble {
+    animation: solFadeIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.sentician-sol-uc-card.is-active .sentician-sol-uc-response-card {
+    animation: solFadeIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+.sentician-uc-caret {
+    display: inline-block;
+    color: #3A82F6;
+    animation: ucCaretBlink 1.1s step-end infinite;
+}
+
+@keyframes ucCaretBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.sentician-sol-uc-input-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(8, 11, 18, 0.9);
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    font-family: "Inter", sans-serif;
+    font-size: 13.5px;
+    color: #94A0B8;
+}
+
+.sentician-sol-uc-input-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #8491AB;
+}
+
+/* ==================== DETAIL SUBPAGE: 3. WHY SECTION ==================== */
+.sentician-sol-why-section {
+    padding: 80px 0 110px;
+    background-color: #000000;
+}
+
+.sentician-sol-why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.sentician-sol-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.sentician-sol-why-card {
+    padding: 32px;
+    border-radius: 20px;
+    background: radial-gradient(85% 65% at 50% 0%, rgba(18, 48, 108, 0.28) 0%, #06070A 72%);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 44px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.sentician-sol-why-card:hover {
+    border-color: rgba(125, 164, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.sentician-sol-why-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: radial-gradient(circle at 50% 0%, rgba(1, 117, 255, 0.28), rgba(9, 13, 22, 0.95) 75%);
+    border: 1px solid rgba(125, 164, 255, 0.28);
+    box-shadow: 0 8px 24px rgba(1, 117, 255, 0.22);
+    display: grid;
+    place-items: center;
+}
+
+.sentician-sol-why-icon img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.sentician-sol-why-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sentician-sol-why-text h3 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.sentician-sol-why-text p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #8491AB;
+}
+
+@media (max-width: 1024px) {
+    .sentician-sol-card-top,
+    .sentician-sol-features-split,
+    .sentician-sol-uc-card,
+    .sentician-sol-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sentician-sol-card-left {
+        padding-right: 0;
+        padding-bottom: 28px;
+        border-right: none;
+        border-bottom: 1px solid rgba(125, 164, 255, 0.14);
+    }
+
+    .sentician-sol-card-top {
+        padding: 32px 28px;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sentician-solutions-hero {
+        padding: 140px 0 64px;
+        min-height: 420px;
+    }
+
+    .sentician-sol-card-banner {
+        height: 150px;
+    }
+
+    .sentician-sol-uc-card {
+        padding: 24px;
+    }
+}
+
+/* ==================== LEGAL PAGES (Privacy Policy & Terms) ==================== */
+.legal-hero {
+    position: relative;
+    margin-top: -92px;
+    padding: 185px 0 60px;
+    background-color: #000000;
+    text-align: center;
+    overflow: hidden;
+}
+
+.legal-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.legal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9CA8C2;
+}
+
+.legal-badge img {
+    width: 18px;
+    height: 18px;
+}
+
+.legal-title {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2.5rem, 4.8vw, 3.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+}
+
+.legal-sub {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.6;
+    color: #94A0B8;
+    max-width: 620px;
+}
+
+.legal-meta-pills {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legal-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 99px;
+    background: #0B0E16;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    color: #8491AB;
+}
+
+.legal-meta-pill strong {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.legal-main-section {
+    padding: 40px 0 120px;
+    background-color: #000000;
+}
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.legal-sidebar {
+    position: sticky;
+    top: 100px;
+    padding: 24px;
+    border-radius: 18px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.legal-sidebar-title {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8491AB;
+}
+
+.legal-toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.legal-toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 13.5px;
+    color: #8491AB;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.legal-toc-item:hover {
+    color: #FFFFFF;
+    background: rgba(125, 164, 255, 0.06);
+}
+
+.legal-toc-item.is-active {
+    color: #FFFFFF;
+    background: rgba(58, 130, 246, 0.12);
+    font-weight: 500;
+}
+
+.legal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.legal-card {
+    padding: 38px 42px;
+    border-radius: 20px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scroll-margin-top: 110px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.legal-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legal-num-badge {
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: rgba(58, 130, 246, 0.12);
+    border: 1px solid rgba(58, 130, 246, 0.24);
+    font-family: "Inter", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #3A82F6;
+}
+
+.legal-card-head h2 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.legal-card p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #9CA8C2;
+}
+
+.legal-card ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legal-card li {
+    position: relative;
+    padding-left: 22px;
+    font-family: "Inter", sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #9CA8C2;
+}
+
+.legal-card li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 1.5px;
+    background: #3A82F6;
+}
+
+.legal-contact-callout {
+    padding: 24px;
+    border-radius: 14px;
+    background: rgba(14, 18, 28, 0.85);
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.legal-contact-callout p {
+    margin: 0;
+}
+
+.legal-contact-callout a {
+    color: #3A82F6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-contact-callout a:hover {
+    color: #60A5FA;
+}
+
+@media (max-width: 900px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+    .legal-sidebar {
+        display: none;
+    }
+    .legal-card {
+        padding: 28px 24px;
+    }
+}
+
+/* ==================== ABOUT PAGE (Matching sen10.mp4 1:1) ==================== */
+.sentician-about-hero {
+    position: relative;
+    margin-top: -92px;
+    background-color: #000000;
+    overflow: hidden;
+    padding-bottom: 90px;
+}
+
+.sentician-about-photo-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1340px;
+    margin: 0 auto;
+    height: 410px;
+    overflow: hidden;
+}
+
+.sentician-about-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    display: block;
+    filter: contrast(1.04) brightness(0.92);
+}
+
+.sentician-about-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0.72) 78%, #000000 100%),
+        linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 86%, #000000 100%);
+    pointer-events: none;
+}
+
+.sentician-about-mission {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+    margin: -18px auto 0;
+    text-align: center;
+}
+
+.sentician-about-mission-text {
+    width: min(90vw, 1250px) !important;
+    max-width: none !important;
+
+    position: relative;
+    left: 50%;
+    translate: -50% 0;
+
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.32;
+    letter-spacing: -0.025em;
+    color: #F8FAFC;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sentician-about-mission-text {
+        width: 92vw !important;
+    }
+}
+
+.sentician-about-committed {
+    padding: 50px 0 110px;
+    background-color: #000000;
+}
+
+.sentician-about-head {
+    margin-top: 22px;
+    margin-bottom: 44px;
+}
+
+
+.sentician-about-head h2 {
+    font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.sentician-committed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.sentician-committed-card {
+    position: relative;
+    border-radius: 22px;
+    padding: 36px 32px 28px;
+    min-height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    background-color: #05070B;
+}
+
+.sentician-committed-card--amber-left {
+    background-image:
+        radial-gradient(120% 85% at 15% 105%, rgba(212, 118, 28, 0.48) 0%, rgba(30, 58, 110, 0.25) 48%, rgba(5, 7, 11, 0) 78%);
+}
+
+.sentician-committed-card--blue-center {
+    background-image:
+        radial-gradient(120% 85% at 20% 95%, rgba(38, 116, 230, 0.48) 0%, rgba(205, 112, 34, 0.28) 55%, rgba(5, 7, 11, 0) 82%);
+}
+
+.sentician-committed-card--amber-right {
+    background-image:
+        radial-gradient(120% 85% at 80% 100%, rgba(208, 114, 26, 0.46) 0%, rgba(34, 88, 180, 0.24) 50%, rgba(5, 7, 11, 0) 80%);
+}
+
+.sentician-committed-copy h3 {
+    margin: 0 0 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.24;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+}
+
+.sentician-committed-copy p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #9CA8C2;
+}
+
+.sentician-committed-art {
+    margin-top: 28px;
+    width: 168px;
+    height: 132px;
+    align-self: flex-start;
+    opacity: 0.9;
+}
+
+.sentician-committed-art svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Join Us Bento Section */
+.sentician-about-join {
+    position: relative;
+    padding: 100px 0 110px;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.sentician-about-join-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(60% 45% at 15% 0%, rgba(212, 118, 28, 0.18) 0%, transparent 70%),
+        radial-gradient(55% 45% at 88% 0%, rgba(0, 110, 255, 0.16) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.sentician-about-join-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 0.95fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.sentician-about-join-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sentician-about-eyebrow-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sentician-about-join-left h2 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+}
+
+.sentician-about-join-left p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
+    color: #9CA8C2;
+    max-width: 480px;
+}
+
+.sentician-about-join-btn {
+    padding: 12px 26px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 12px;
+}
+
+.sentician-about-bento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.sentician-about-bento-col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sentician-about-bento-photo {
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    background: #080A0F;
+    height: 360px;
+}
+
+.sentician-about-bento-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sentician-about-bento-slab {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    background: #080A0F;
+    height: 108px;
+}
+
+.sentician-about-bento-slab img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 960px) {
+    .sentician-committed-grid {
+        grid-template-columns: 1fr;
+    }
+    .sentician-about-join-grid {
+        grid-template-columns: 1fr;
+    }
+    .sentician-about-bento {
+        grid-template-columns: 1fr;
+    }
+    .sentician-about-photo-wrap {
+        height: 300px;
+    }
+}
+
+/* Scroll Reveal */
+[data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition: opacity 640ms cubic-bezier(0.16, 1, 0.3, 1), transform 640ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+[data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); will-change: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 1024px) {
+    .exceptionalities-grid,
+    .pricing-grid,
+    .integrations-grid,
+    .pillars-grid,
+    .mini-verticals-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-panel,
+    .products-stage-card,
+    .kickstart-row-card,
+    .security-split,
+    .testimonial-slide,
+    .integration-split,
+    .roi-shell,
+    .about-split,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split-section-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .split-section-head p {
+        text-align: left;
+    }
+
+    .footer-grid--sentician {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav,
+    .header-actions .btn-glow-pill,
+    .hide-mobile {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: inline-flex;
+    }
+
+    .exceptionalities-grid,
+    .pricing-grid,
+    .integrations-grid,
+    .pillars-grid,
+    .mini-verticals-grid,
+    .faq-grid-2col,
+    .services-grid,
+    .values-grid,
+    .agent-mini-grid,
+    .form-row,
+    .footer-grid--sentician {
+        grid-template-columns: 1fr;
+    }
+
+    .agent-studio-frame {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-sidebar {
+        display: none;
+    }
+
+    .integration-tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .security-slabs-stage {
+        height: 280px;
+    }
+
+    .glass-slab {
+        width: 150px;
+        height: 210px;
+    }
+}
+
+/* ==================== CONTACT PAGE (Matching sen12.mp4 1:1) ==================== */
+.sentician-contact-hero {
+    padding: 150px 0 48px;
+}
+
+.sentician-contact-bento-section {
+    padding: 10px 0 90px;
+    background-color: #000000;
+}
+
+.sentician-contact-bento-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.sentician-contact-right-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sentician-contact-card {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 22px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    transition: border-color 0.3s ease;
+}
+
+.sentician-contact-card:hover {
+    border-color: rgba(125, 164, 255, 0.28);
+}
+
+.sentician-contact-hello-stage {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sentician-contact-hello-stage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sentician-contact-hello-glass {
+    position: absolute;
+    inset: 24px 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(4px);
+}
+
+.sentician-contact-hello-word {
+    position: relative;
+    z-index: 2;
+    font-family: "Inter", sans-serif;
+    font-size: 3.1rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    background: linear-gradient(90deg, #FCD9B6 0%, #FFFFFF 48%, #B6DAFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.sentician-contact-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    background: radial-gradient(circle at 22% 80%, rgba(235, 132, 32, 0.65), rgba(20, 95, 210, 0.55) 60%, rgba(6, 7, 10, 0.95));
+    border: 1px solid rgba(125, 164, 255, 0.28);
+    box-shadow: 0 8px 24px rgba(1, 117, 255, 0.2);
+}
+
+.sentician-contact-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sentician-contact-card-body h2,
+.sentician-contact-card-body h3 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.5rem, 2.1vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+.sentician-contact-card-body p {
+    margin: 0 0 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #8E9BB5;
+}
+
+.sentician-contact-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 28px;
+    border-radius: 12px;
+    background: #06080D;
+    border: 1px solid rgba(125, 164, 255, 0.32);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 0 22px rgba(1, 117, 255, 0.16);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-decoration: none;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.sentician-contact-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0070FF 0%, #6EB5FF 68%, #F3CFA4 100%);
+    opacity: 0;
+    transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.sentician-contact-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.sentician-contact-btn:hover {
+    border-color: rgba(147, 197, 253, 0.75);
+    box-shadow: 0 10px 28px rgba(0, 112, 255, 0.32);
+    transform: translateY(-1px);
+}
+
+.sentician-contact-btn:hover::before {
+    opacity: 1;
+}
+
+.sentician-contact-btn--full {
+    width: 100%;
+    padding: 13px 28px;
+}
+
+/* Global Presence */
+.sentician-global-section {
+    padding: 40px 0 90px;
+    background-color: #000000;
+}
+
+.sentician-global-container {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.sentician-global-head {
+    margin-bottom: 42px;
+}
+
+.sentician-global-head h2 {
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.sentician-global-stage {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 22px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.74fr 1.35fr 0.85fr;
+    min-height: 410px;
+}
+
+.sentician-global-cities {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sentician-global-city-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.1);
+    padding: 16px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.sentician-global-city-btn:last-child {
+    border-bottom: none;
+}
+
+.sentician-global-city-btn.is-active {
+    border-bottom-color: rgba(58, 130, 246, 0.65);
+}
+
+.sentician-global-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-top: 6px;
+    background: #5B667E;
+    flex-shrink: 0;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sentician-global-city-btn.is-active .sentician-global-dot {
+    background: linear-gradient(135deg, #F59E0B, #3B82F6);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.75);
+}
+
+.sentician-global-city-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sentician-global-city-meta strong {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #8E9BB5;
+    transition: color 0.25s ease;
+}
+
+.sentician-global-city-btn.is-active .sentician-global-city-meta strong {
+    color: #FFFFFF;
+}
+
+.sentician-global-city-meta small {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #6B768F;
+}
+
+.sentician-global-photo {
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid rgba(125, 164, 255, 0.1);
+    border-right: 1px solid rgba(125, 164, 255, 0.1);
+}
+
+.sentician-global-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-global-detail {
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sentician-global-detail h3 {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+}
+
+.sentician-global-orb img {
+    width: 34px;
+    height: 34px;
+    display: block;
+    border-radius: 50%;
+}
+
+.sentician-global-detail p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #8E9BB5;
+}
+
+.sentician-contact-form-section {
+    padding: 20px 0 110px;
+}
+
+.sentician-contact-form-container {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+    .sentician-contact-bento-grid,
+    .sentician-global-stage {
+        grid-template-columns: 1fr;
+    }
+    .sentician-global-photo {
+        height: 260px;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid rgba(125, 164, 255, 0.1);
+        border-bottom: 1px solid rgba(125, 164, 255, 0.1);
+    }
+}
+
+/* ==================== BLOGS & NEWSLETTER PAGE ==================== */
+.sentician-blog-hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.sentician-blog-section {
+    padding: 32px 0 40px;
+}
+
+.sentician-blog-featured {
+    display: grid;
+    grid-template-columns: 1.08fr 1fr;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.sentician-blog-featured:hover {
+    border-color: rgba(125, 164, 255, 0.34);
+    transform: translateY(-2px);
+}
+
+.sentician-blog-featured-media {
+    position: relative;
+    min-height: 360px;
+    background: #040508;
+    overflow: hidden;
+}
+
+.sentician-blog-featured-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.sentician-blog-featured:hover .sentician-blog-featured-media img {
+    transform: scale(1.03);
+}
+
+.sentician-blog-featured-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(6, 7, 10, 0.84);
+    border: 1px solid rgba(255, 122, 0, 0.45);
+    color: #FFB067;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+}
+
+.sentician-blog-featured-body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sentician-blog-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sentician-blog-cat-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(0, 132, 255, 0.12);
+    border: 1px solid rgba(125, 164, 255, 0.25);
+    color: #93C5FD;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.sentician-blog-meta-text {
+    font-size: 13px;
+    color: #8E9BB5;
+}
+
+.sentician-blog-featured-title {
+    margin: 0;
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #F8FAFC;
+}
+
+.sentician-blog-featured-excerpt {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #9CA8C2;
+}
+
+.sentician-blog-featured-footer {
+    margin-top: 8px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sentician-blog-author {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #CBD5E1;
+}
+
+.sentician-blog-read-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    background: rgba(12, 16, 26, 0.9);
+    border: 1px solid rgba(125, 164, 255, 0.28);
+    color: #F8FAFC;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sentician-blog-read-btn:hover {
+    background: rgba(0, 132, 255, 0.14);
+    border-color: rgba(125, 164, 255, 0.55);
+    box-shadow: 0 0 22px rgba(0, 132, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.sentician-blog-grid-section {
+    padding: 56px 0 80px;
+}
+
+.sentician-blog-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.sentician-blog-section-heading {
+    margin: 8px 0 0;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #F8FAFC;
+}
+
+.sentician-blog-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sentician-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.sentician-blog-card {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.sentician-blog-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(125, 164, 255, 0.34);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.55);
+}
+
+.sentician-blog-card.is-hidden {
+    display: none;
+}
+
+.sentician-blog-card-media {
+    aspect-ratio: 16 / 10;
+    background: #040508;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.1);
+}
+
+.sentician-blog-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.sentician-blog-card:hover .sentician-blog-card-media img {
+    transform: scale(1.04);
+}
+
+.sentician-blog-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.sentician-blog-card-title {
+    margin: 2px 0 0;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.32;
+    letter-spacing: -0.015em;
+    color: #F8FAFC;
+}
+
+.sentician-blog-card-excerpt {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #8E9BB5;
+    flex: 1;
+}
+
+.sentician-blog-card-footer {
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sentician-blog-card-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #93C5FD;
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sentician-blog-card-link:hover {
+    color: #FFFFFF;
+    transform: translateX(2px);
+}
+
+/* Newsletter Card */
+.sentician-newsletter-section {
+    padding: 20px 0 110px;
+}
+
+.sentician-newsletter-card {
+    position: relative;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.2);
+    border-radius: 26px;
+    padding: 48px;
+    overflow: hidden;
+    box-shadow: 0 30px 72px rgba(0, 0, 0, 0.65);
+}
+
+.sentician-newsletter-glow {
+    position: absolute;
+    inset: -40% -15% auto auto;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(0, 132, 255, 0.16) 0%, rgba(255, 122, 0, 0.09) 45%, transparent 72%);
+    pointer-events: none;
+}
+
+.sentician-newsletter-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.sentician-newsletter-title {
+    margin: 10px 0 14px;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+    color: #F8FAFC;
+}
+
+.sentician-newsletter-desc {
+    margin: 0 0 22px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #9CA8C2;
+}
+
+.sentician-newsletter-perks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sentician-newsletter-perks li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 14px;
+    color: #CBD5E1;
+}
+
+.sentician-newsletter-perks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF7A00, #0084FF);
+}
+
+.sentician-newsletter-form-wrap {
+    background: rgba(10, 12, 18, 0.86);
+    border: 1px solid rgba(125, 164, 255, 0.15);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.sentician-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sentician-newsletter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sentician-newsletter-field label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #CBD5E1;
+}
+
+.sentician-newsletter-field input,
+.sentician-newsletter-field select {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    background: #040508;
+    color: #F8FAFC;
+    font-family: inherit;
+    font-size: 14.5px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sentician-newsletter-field input:focus,
+.sentician-newsletter-field select:focus {
+    border-color: rgba(0, 132, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.16);
+}
+
+.sentician-newsletter-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.sentician-newsletter-note {
+    margin: 0;
+    text-align: center;
+    font-size: 12.5px;
+    color: #7D89A3;
+}
+
+.sentician-newsletter-alert {
+    padding: 13px 15px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.sentician-newsletter-alert.is-success {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #A7F3D0;
+}
+
+.sentician-newsletter-alert.is-error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #FCA5A5;
+}
+
+/* Article Reader Modal */
+.sentician-blog-modal[hidden] {
+    display: none;
+}
+
+.sentician-blog-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.sentician-blog-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.sentician-blog-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.24);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8);
+}
+
+.sentician-blog-modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 164, 255, 0.2);
+    background: rgba(10, 12, 18, 0.9);
+    color: #CBD5E1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.sentician-blog-modal-close:hover {
+    border-color: rgba(125, 164, 255, 0.5);
+    color: #FFFFFF;
+}
+
+.sentician-blog-modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.sentician-blog-modal-title {
+    margin: 0 0 8px;
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    color: #F8FAFC;
+}
+
+.sentician-blog-modal-author {
+    margin: 0 0 22px;
+    font-size: 13.5px;
+    color: #8E9BB5;
+}
+
+.sentician-blog-modal-cover {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    margin-bottom: 24px;
+    aspect-ratio: 16 / 9;
+    background: #040508;
+}
+
+.sentician-blog-modal-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sentician-blog-modal-takeaways {
+    background: rgba(0, 132, 255, 0.07);
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+}
+
+.sentician-blog-modal-takeaways-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93C5FD;
+    margin-bottom: 10px;
+}
+
+.sentician-blog-modal-takeaways ul {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #D4DEEE;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.sentician-blog-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #B4C0D4;
+    font-size: 15.5px;
+    line-height: 1.72;
+}
+
+.sentician-blog-modal-body p {
+    margin: 0;
+}
+
+.sentician-blog-modal-footer {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(125, 164, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+    .sentician-blog-featured,
+    .sentician-newsletter-grid {
+        grid-template-columns: 1fr;
+    }
+    .sentician-blog-featured-media {
+        min-height: 260px;
+    }
+    .sentician-blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .sentician-blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .sentician-blog-featured-body,
+    .sentician-newsletter-card {
+        padding: 26px;
+    }
+    .sentician-blog-modal-dialog {
+        padding: 24px;
+    }
+}
+
+/* ==================== ABOUT: WHO WE ARE, DOMAINS & APPROACH ==================== */
+.sentician-about-who-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #93C5FD;
+    margin-bottom: 14px;
+}
+
+.sentician-about-who-title {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #F8FAFC;
+}
+
+.sentician-about-domains {
+    padding: 72px 0;
+}
+
+.sentician-domains-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.sentician-domain-card {
+    position: relative;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --mx: 50%;
+    --my: 50%;
+}
+
+.sentician-domain-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(420px circle at var(--mx) var(--my), rgba(0, 132, 255, 0.14), rgba(255, 122, 0, 0.06) 40%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sentician-domain-card:hover::before {
+    opacity: 1;
+}
+
+.sentician-domain-card:hover {
+    border-color: rgba(125, 164, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 26px 58px rgba(0, 0, 0, 0.65), 0 0 28px rgba(0, 132, 255, 0.12);
+}
+
+.sentician-domain-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #030407;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.12);
+}
+
+.sentician-domain-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    filter: saturate(1.06) contrast(1.04);
+}
+
+.sentician-domain-card:hover .sentician-domain-media img {
+    transform: scale(1.06);
+}
+
+.sentician-domain-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 7, 10, 0.08) 0%, rgba(6, 7, 10, 0.55) 100%);
+    pointer-events: none;
+}
+
+.sentician-domain-scanline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    top: -10%;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 132, 255, 0.75) 50%, rgba(255, 122, 0, 0.65) 80%, transparent 100%);
+    box-shadow: 0 0 14px rgba(0, 132, 255, 0.65);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sentician-domain-card:hover .sentician-domain-scanline {
+    opacity: 0.9;
+    animation: domainScanSweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes domainScanSweep {
+    0% { top: -4%; opacity: 0; }
+    15% { opacity: 0.9; }
+    85% { opacity: 0.9; }
+    100% { top: 104%; opacity: 0; }
+}
+
+.sentician-domain-status {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(6, 7, 10, 0.78);
+    border: 1px solid rgba(125, 164, 255, 0.24);
+    backdrop-filter: blur(10px);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #D4E4FF;
+}
+
+.sentician-domain-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3B82F6;
+    box-shadow: 0 0 8px #3B82F6;
+    animation: domainPulseDot 2s ease-in-out infinite;
+}
+
+@keyframes domainPulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+.sentician-domain-body {
+    position: relative;
+    z-index: 3;
+    padding: 24px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.sentician-domain-hud {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-domain-card:hover .sentician-domain-hud {
+    transform: scale(1.04);
+}
+
+.hud-flow-line {
+    stroke-dasharray: 8 6;
+    animation: hudDashFlow 3.2s linear infinite;
+}
+
+@keyframes hudDashFlow {
+    to { stroke-dashoffset: -56; }
+}
+
+.hud-pulse-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hudNodePulse 2.6s ease-in-out infinite;
+}
+
+@keyframes hudNodePulse {
+    0%, 100% { opacity: 0.95; filter: drop-shadow(0 0 6px currentColor); }
+    50% { opacity: 0.45; filter: drop-shadow(0 0 2px currentColor); }
+}
+
+.hud-spin-slow {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hudSpin 18s linear infinite;
+}
+
+@keyframes hudSpin {
+    to { transform: rotate(360deg); }
+}
+
+.hud-pulse-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hudRingBeat 3.4s ease-in-out infinite;
+}
+
+.hud-pulse-ring--d1 { animation-delay: 0.55s; }
+.hud-pulse-ring--d2 { animation-delay: 1.1s; }
+
+@keyframes hudRingBeat {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.06); }
+}
+
+.sentician-domain-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sentician-domain-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #FF9A3C;
+    letter-spacing: 0.08em;
+}
+
+.sentician-domain-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7D89A3;
+}
+
+.sentician-domain-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #F8FAFC;
+}
+
+.sentician-domain-card p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #9CA8C2;
+}
+
+.sentician-domain-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.sentician-domain-tag {
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(0, 132, 255, 0.08);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-size: 12px;
+    color: #CBD5E1;
+}
+
+.sentician-about-approach {
+    padding: 40px 0 80px;
+}
+
+.sentician-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sentician-approach-card {
+    position: relative;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --mx: 50%;
+    --my: 50%;
+}
+
+.sentician-approach-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(320px circle at var(--mx) var(--my), rgba(0, 132, 255, 0.14), rgba(255, 122, 0, 0.06) 45%, transparent 74%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sentician-approach-card:hover::before {
+    opacity: 1;
+}
+
+.sentician-approach-card:hover {
+    border-color: rgba(125, 164, 255, 0.42);
+    transform: translateY(-5px);
+    box-shadow: 0 24px 52px rgba(0, 0, 0, 0.65), 0 0 26px rgba(0, 132, 255, 0.12);
+}
+
+.sentician-approach-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: #030407;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.12);
+}
+
+.sentician-approach-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-approach-card:hover .sentician-approach-media img {
+    transform: scale(1.07);
+}
+
+.sentician-approach-card:hover .sentician-domain-scanline {
+    opacity: 0.9;
+    animation: domainScanSweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.sentician-approach-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(6, 7, 10, 0.8);
+    border: 1px solid rgba(255, 122, 0, 0.38);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFB067;
+    backdrop-filter: blur(8px);
+}
+
+.sentician-approach-body {
+    position: relative;
+    z-index: 3;
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sentician-approach-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FF9A3C;
+}
+
+.sentician-approach-card h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sentician-approach-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.58;
+    color: #8E9BB5;
+}
+
+.sentician-industries-bar {
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sentician-industries-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93C5FD;
+}
+
+.sentician-industries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sentician-industry-pill {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    font-size: 13px;
+    color: #E2E8F0;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sentician-industry-pill:hover {
+    border-color: rgba(0, 132, 255, 0.5);
+    background: rgba(0, 132, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 132, 255, 0.18);
+}
+
+@media (max-width: 960px) {
+    .sentician-domains-grid {
+        grid-template-columns: 1fr;
+    }
+    .sentician-approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .sentician-approach-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== CAREERS / JOIN US PAGE ==================== */
+.sentician-careers-pillars {
+    padding: 40px 0 56px;
+}
+
+.sentician-careers-roles {
+    padding: 48px 0 80px;
+}
+
+.sentician-careers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.sentician-career-card {
+    position: relative;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --mx: 50%;
+    --my: 50%;
+}
+
+.sentician-career-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(400px circle at var(--mx) var(--my), rgba(0, 132, 255, 0.14), rgba(255, 122, 0, 0.06) 42%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sentician-career-card:hover::before {
+    opacity: 1;
+}
+
+.sentician-career-card:hover {
+    border-color: rgba(125, 164, 255, 0.42);
+    transform: translateY(-5px);
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 0.65), 0 0 28px rgba(0, 132, 255, 0.12);
+}
+
+.sentician-career-card:hover .sentician-domain-media img {
+    transform: scale(1.06);
+}
+
+.sentician-career-card:hover .sentician-domain-scanline {
+    opacity: 0.9;
+    animation: domainScanSweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.sentician-career-card:hover .sentician-domain-hud {
+    transform: scale(1.04);
+}
+
+.sentician-career-body {
+    position: relative;
+    z-index: 3;
+    padding: 24px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.sentician-career-card.is-hidden {
+    display: none;
+}
+
+.sentician-career-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sentician-career-card h3 {
+    margin: 4px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #F8FAFC;
+}
+
+.sentician-career-loc {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #93C5FD;
+}
+
+.sentician-career-summary {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #9CA8C2;
+    flex: 1;
+}
+
+.sentician-career-card-footer {
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+    .sentician-careers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== CONTACT PAGE VISUAL ENHANCEMENTS ==================== */
+.sentician-contact-card {
+    position: relative;
+    overflow: hidden;
+    --mx: 50%;
+    --my: 50%;
+}
+
+.sentician-contact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(360px circle at var(--mx) var(--my), rgba(0, 132, 255, 0.12), rgba(255, 122, 0, 0.05) 45%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sentician-contact-card:hover::before {
+    opacity: 1;
+}
+
+.sentician-contact-mini-media {
+    position: relative;
+    height: 118px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    background: #030407;
+    margin-bottom: 16px;
+}
+
+.sentician-contact-mini-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-contact-card:hover .sentician-contact-mini-media img {
+    transform: scale(1.06);
+}
+
+.sentician-contact-card:hover .sentician-domain-scanline,
+.sentician-global-photo:hover .sentician-domain-scanline {
+    opacity: 0.9;
+    animation: domainScanSweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.sentician-global-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.sentician-global-photo img {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sentician-global-photo:hover img {
+    transform: scale(1.04);
+}
+
+.sentician-global-meta-list {
+    margin-top: auto;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+}
+
+.sentician-global-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sentician-global-meta-item span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #7D89A3;
+}
+
+.sentician-global-meta-item strong {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #E2E8F0;
+}
+
+.sentician-global-cta-wrap {
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.sentician-subpage-back {
+    margin-bottom: 20px;
+}
+
+.sentician-contact-hero .sentician-solutions-hero-inner {
+    padding-top: 0px;
+    padding-bottom: 56px;
+}
+
+.sentician-contact-compact-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.sentician-contact-sla-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: #93C5FD;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0, 132, 255, 0.09);
+    border: 1px solid rgba(125, 164, 255, 0.2);
+}
+
+.sentician-contact-compact-actions {
+    margin-top: 6px;
+}
+
+/* ==================== INTEGRATIONS PAGE ENHANCEMENTS ==================== */
+.sentician-int-filter-wrap {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.sentician-int-section {
+    padding: 40px 0 88px;
+}
+
+.sentician-int-card {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --mx: 50%;
+    --my: 50%;
+}
+
+.sentician-int-card.is-hidden {
+    display: none;
+}
+
+.sentician-int-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(380px circle at var(--mx) var(--my), rgba(0, 132, 255, 0.14), rgba(255, 122, 0, 0.06) 42%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sentician-int-card:hover::before {
+    opacity: 1;
+}
+
+.sentician-int-card:hover {
+    border-color: rgba(125, 164, 255, 0.42);
+    transform: translateY(-5px);
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 0.65), 0 0 28px rgba(0, 132, 255, 0.12);
+}
+
+.sentician-int-card:hover .sentician-domain-media img {
+    transform: scale(1.06);
+}
+
+.sentician-int-card:hover .sentician-domain-scanline {
+    opacity: 0.9;
+    animation: domainScanSweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.sentician-int-card:hover .sentician-domain-hud {
+    transform: scale(1.04);
+}
+
+.sentician-int-body {
+    position: relative;
+    z-index: 3;
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.sentician-int-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(125, 164, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sentician-int-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #93C5FD;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sentician-int-link:hover {
+    color: #FFFFFF;
+    transform: translateX(2px);
+}
+
+/* ==================== CORPORATE CAREERS / JOB BOARD (Roboflow/Ashby Pattern in Sentician Dark Obsidian) ==================== */
+.sentician-corp-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sentician-corp-pillar {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.sentician-corp-pillar:hover {
+    border-color: rgba(125, 164, 255, 0.36);
+    transform: translateY(-3px);
+}
+
+.sentician-corp-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(0, 132, 255, 0.1);
+    border: 1px solid rgba(125, 164, 255, 0.24);
+    color: #93C5FD;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sentician-corp-pillar h3 {
+    margin: 2px 0 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sentician-corp-pillar p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.58;
+    color: #8E9BB5;
+}
+
+.sentician-jobboard-section {
+    padding: 36px 0 110px;
+}
+
+.sentician-jobboard {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 32px;
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.sentician-jobboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid rgba(125, 164, 255, 0.12);
+    padding-right: 26px;
+}
+
+.sentician-jb-search input {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(125, 164, 255, 0.18);
+    background: #040508;
+    color: #F8FAFC;
+    font-family: inherit;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sentician-jb-search input:focus {
+    border-color: rgba(0, 132, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.15);
+}
+
+.sentician-jb-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sentician-jb-filter-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93C5FD;
+    margin-bottom: 4px;
+}
+
+.sentician-jb-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: #CBD5E1;
+    transition: background 0.2s ease;
+}
+
+.sentician-jb-check:hover {
+    background: rgba(125, 164, 255, 0.08);
+}
+
+.sentician-jb-check input {
+    accent-color: #0084FF;
+    cursor: pointer;
+}
+
+.sentician-jb-check em {
+    margin-left: auto;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: #7D89A3;
+}
+
+.sentician-jb-clear-btn {
+    margin-top: 4px;
+    padding: 9px 14px;
+    border-radius: 9px;
+    border: 1px solid rgba(125, 164, 255, 0.2);
+    background: rgba(12, 16, 26, 0.8);
+    color: #CBD5E1;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.sentician-jb-clear-btn:hover {
+    border-color: rgba(125, 164, 255, 0.5);
+    color: #FFFFFF;
+}
+
+.sentician-jb-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.14);
+    margin-bottom: 6px;
+}
+
+.sentician-jb-list-header span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sentician-jb-list-header strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #93C5FD;
+}
+
+.sentician-jb-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.sentician-jb-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 14px;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.1);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.sentician-jb-row:hover {
+    background: rgba(0, 132, 255, 0.07);
+    transform: translateX(4px);
+}
+
+.sentician-jb-row.is-hidden {
+    display: none;
+}
+
+.sentician-jb-row-main h3 {
+    margin: 0 0 10px;
+    font-size: 17.5px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sentician-jb-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sentician-jb-pill {
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    color: #9CA8C2;
+}
+
+.sentician-jb-pill--dept {
+    border-color: rgba(255, 122, 0, 0.3);
+    color: #FFB067;
+}
+
+.sentician-jb-arrow {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #93C5FD;
+    white-space: nowrap;
+}
+
+.sentician-jb-empty {
+    padding: 48px 20px;
+    text-align: center;
+    color: #8E9BB5;
+}
+
+/* Role Detail View */
+.sentician-role-detail-section {
+    padding: 24px 0 110px;
+}
+
+.sentician-role-back-row {
+    margin-bottom: 24px;
+}
+
+.sentician-role-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.sentician-role-sidebar {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.14);
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sentician-role-meta-item {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sentician-role-meta-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.sentician-role-meta-item span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7D89A3;
+}
+
+.sentician-role-meta-item strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: #F8FAFC;
+}
+
+.sentician-role-main {
+    background: #06070A;
+    border: 1px solid rgba(125, 164, 255, 0.16);
+    border-radius: 22px;
+    padding: 32px;
+}
+
+.sentician-role-tabs {
+    display: flex;
+    gap: 28px;
+    border-bottom: 1px solid rgba(125, 164, 255, 0.14);
+    margin-bottom: 28px;
+}
+
+.sentician-role-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 2px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8E9BB5;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.sentician-role-tab.is-active {
+    color: #FFFFFF;
+    border-bottom-color: #0084FF;
+}
+
+.sentician-role-pane {
+    display: none;
+}
+
+.sentician-role-pane.is-active {
+    display: block;
+}
+
+.sentician-role-block {
+    margin-bottom: 26px;
+}
+
+.sentician-role-block h2 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sentician-role-block p,
+.sentician-role-block li {
+    font-size: 15px;
+    line-height: 1.68;
+    color: #9CA8C2;
+}
+
+.sentician-role-block ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sentician-role-cta-bar {
+    padding-top: 12px;
+}
+
+.sentician-upload-dropzone {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px dashed rgba(125, 164, 255, 0.34);
+    background: rgba(10, 14, 24, 0.65);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sentician-upload-dropzone:hover {
+    border-color: rgba(0, 132, 255, 0.75);
+    background: rgba(0, 132, 255, 0.08);
+}
+
+.sentician-upload-input {
+    display: none;
+}
+
+.sentician-upload-btn {
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 164, 255, 0.35);
+    background: rgba(0, 132, 255, 0.14);
+    color: #93C5FD;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sentician-upload-hint {
+    font-size: 13.5px;
+    color: #8E9BB5;
+}
+
+@media (max-width: 960px) {
+    .sentician-corp-pillars-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sentician-jobboard,
+    .sentician-role-layout {
+        grid-template-columns: 1fr;
+    }
+    .sentician-jobboard-sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(125, 164, 255, 0.12);
+        padding-right: 0;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sentician-corp-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+}
